@@ -57,17 +57,6 @@ const MapTimeline = ({ factories, timeperiods, minMaxYear, language }) => {
         }
     }
 
-    window.addEventListener('resize', async () => {
-        // This function will be called whenever the window is resized
-        setWindowWidth(window.innerWidth);
-        setWindowHeight(window.innerHeight);
-        setTimelineTop(windowHeight);
-
-        factories.forEach(async factory => {
-            await factory.getFactoryCoords();
-        });
-    });
-
     /** showMarker(fid)
      * @abstract Function that will show the marker for the given factory id (fid)
      * @param { int } fid a factory ID 
