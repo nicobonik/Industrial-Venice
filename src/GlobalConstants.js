@@ -17,15 +17,27 @@ export const factoryStoryMapURLs = {
     },
     28: { // Gianolla
         en: 'https://storymaps.arcgis.com/stories/f4e8d9f7c1c9475a803d7ecef51d3553',
-        it: 'https://storymaps.arcgis.com/stories/fd499fa9a0b847fe99b256b8c7118487'     // NOTE: link to english storymap, italian one not made yet
+        it: 'https://storymaps.arcgis.com/stories/fd499fa9a0b847fe99b256b8c7118487'     
     },
     19: { // Junghans
-        en: 'https://storymaps.arcgis.com/stories/9c618746736243bc9894725311a4ee20',
-        it: 'https://storymaps.arcgis.com/stories/98b8a108d89948f9b82fcaab598da83f'     
+        en: 'https://storymaps.arcgis.com/stories/9c618746736243bc9894725311a4ee20?cover=false',
+        it: 'https://storymaps.arcgis.com/stories/98b8a108d89948f9b82fcaab598da83f?cover=false'
     },
-    14: { // Herion
+    14: { // Hérion
         en: 'https://storymaps.arcgis.com/stories/81706d259ec54394b759eb0d6dcdfbee',
-        it: 'https://storymaps.arcgis.com/stories/54c18757ada74835b763f4b24b97cd68',    
+        it: 'https://storymaps.arcgis.com/stories/54c18757ada74835b763f4b24b97cd68'    
+    },
+    16: { // Toffolo
+        en: 'https://storymaps.arcgis.com/stories/090dc60ff7f8486b8209d3f79d38a329',
+        it: 'https://storymaps.arcgis.com/stories/090dc60ff7f8486b8209d3f79d38a329'
+    },
+    15: { // Lucchese
+        en: 'https://storymaps.arcgis.com/stories/c7daaf088bed429188e604e9bec50857',
+        it: 'https://storymaps.arcgis.com/stories/c7daaf088bed429188e604e9bec50857'
+    },
+    37: { // Tanner
+        en: 'https://storymaps.arcgis.com/stories/f24b394505f741f18a57c02f8eca6970',
+        it: 'https://storymaps.arcgis.com/stories/f24b394505f741f18a57c02f8eca6970',
     }
 }
 
