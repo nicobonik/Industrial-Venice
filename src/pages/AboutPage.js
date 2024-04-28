@@ -18,6 +18,7 @@ import { LanguageContext } from '../context/LanguageContext.js';
 import Title from '../components/Title.js';
 import '../css/AboutPage.css';
 
+
 function AboutPage() {
     const {t, language} = useContext(LanguageContext);
 
@@ -43,14 +44,9 @@ function AboutPage() {
                 {/* Row 0 (project overview) */}
                 <div className='about-row c'> 
                     <div className='row-content-container' id='project-overview-row'>
-                        <h1 className='row-title'>Project Overview</h1>
+                        <h1 className='row-title'>{t("projectOverview")}</h1>
                         <p className='about-content'>
-                            Digitizing historical data is a process that has been made possible through advancements in modern technology. Digital databases 
-                            allow researchers and historians to access copious amounts of information and data; moreover, the digitization of data provides 
-                            easier access to a wider range of audiences. For this project, we seized an opportunity to digitize data about social, cultural, 
-                            and economic history. We created a digital database and designed a digital platform to provide users with information about Giudecca’s 
-                            industrial history. It is our hope that this project inspires future work to explore solutions for preserving delicate, culturally 
-                            significant histories.
+                            {t('briefDescription')}
                         </p>
                     </div>
                 </div>
@@ -58,29 +54,19 @@ function AboutPage() {
                 {/* Row 1 (right align) */}
                 <div className='about-row r'>
                     <div className='content-img-container'>
-                    <img src='lando-1.png' />
+                    <img src='landoHeadshot.jpg' />
                     </div>
                     <div className='row-content-container'>
                         <h1 className='row-title'>Dr. Pietro Lando</h1>
                         <p className='about-content'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            {t('landoSection1')}
+                        </p>
+                        <p className='about-content'>
+                            {t('landoSection2')}
                         </p>
 
                         <p className='about-content'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-
-                        <p className='about-content'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            {t('landoSection3')}
                         </p>
                     </div>
                 </div>
@@ -90,25 +76,13 @@ function AboutPage() {
                     <div className='row-content-container'>
                         <h1 className='row-title'>Fabio Carrera & SerenDPT</h1>
                         <p className='about-content'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            {t("serenDPTSection1")}
+                        </p>
+                        <p className='about-content'>
+                            {t("serenDPTSection2")}
                         </p>
 
-                        <p className='about-content'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
 
-                        <p className='about-content'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
                     </div>
                     <div className='content-img-container sdpt'>
 
@@ -150,26 +124,15 @@ function AboutPage() {
                         <img src='wpi-logo.png' className='content-img logo'/>
                     </div>
                     <div className='row-content-container'>
-                        <h1 className='row-title'>WPI & The Industrial Giudecca Team</h1>
+                        <h1 className='row-title'>{t("industrialGiudeccaTitle")}</h1>
                         <p className='about-content'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            {t('industrialGiudeccaSection1')}
                         </p>
-
                         <p className='about-content'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            {t('industrialGiudeccaSection2')}
                         </p>
-
                         <p className='about-content'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            {t('industrialGiudeccaSection3')}
                         </p>
                     </div>
                 </div>
@@ -177,7 +140,7 @@ function AboutPage() {
             
             <div className='about-page-footer'>
                 <button className='about-learn-more' onClick={learnMoreClick}>
-                    Click to learn more about our process and journey
+                    {t("buttonBottomAbout")}
                 </button>
             </div>
             
