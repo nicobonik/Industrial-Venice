@@ -9,19 +9,19 @@ export const factoryStoryMapURLs = {
     },
     3: { // Stucky
         en: 'https://storymaps.arcgis.com/stories/9cb7b8c694384786a8208b17b8f16a52',
-        it: ''
+        it: 'https://storymaps.arcgis.com/stories/c929e323569746d197298582d855feec'
     },
     9: { // Scalera
         en: 'https://storymaps.arcgis.com/stories/d488bbdddc3c4c2ca34686b9d230d40f',
-        it: 'https://storymaps.arcgis.com/stories/214333c62d7b4813bffc5d9a4abc6af6'
+        it: 'https://storymaps.arcgis.com/stories/e8d4a8e29be24c6f984a3f4abd9f8099'
     },
     28: { // Gianolla
         en: 'https://storymaps.arcgis.com/stories/f4e8d9f7c1c9475a803d7ecef51d3553',
         it: 'https://storymaps.arcgis.com/stories/fd499fa9a0b847fe99b256b8c7118487'     
     },
     19: { // Junghans
-        en: 'https://storymaps.arcgis.com/stories/9c618746736243bc9894725311a4ee20?',
-        it: 'https://storymaps.arcgis.com/stories/98b8a108d89948f9b82fcaab598da83f?'
+        en: 'https://storymaps.arcgis.com/stories/9c618746736243bc9894725311a4ee20',
+        it: 'https://storymaps.arcgis.com/stories/fcaff9ccd04f40e796753b529046c663'
     },
     14: { // Hérion
         en: 'https://storymaps.arcgis.com/stories/81706d259ec54394b759eb0d6dcdfbee',
@@ -76,7 +76,7 @@ export function intersection(list1, list2) {
     return list1.filter(item => list2.includes(item));
 }
 
-// URL for the instant app service that is shown fullscreen on the "/map" enpoint (src/pages/MapPage.js)
+// URL for the instant app service that is shown fullscreen on the "/map" enpoint (src/pages/InteractiveMap.js)
 export const mapInstantAppURL = "https://serendpt.maps.arcgis.com/apps/instant/sidebar/index.html?appid=01fcbf22fca04b278bd20a2e2cc0a675";
 
 // Constants needed for the MapTimeline and FactoryMap

@@ -12,6 +12,7 @@ import LanguageSelector from '../components/LanguageSelector.js';
 import { LanguageContext } from '../context/LanguageContext.js';
 import Title from '../components/Title.js';
 import { fetchFL } from '../ArcGIS.js';
+import Footer from '../components/Footer.js';
 
 import '../css/IndustrialStories.css';
 
@@ -21,8 +22,8 @@ function IndustrialStoriesPage() {
     const [selectedStorymap, setSelectedStorymap] = useState('');
     const [selectedID, setSelectedID] = useState(0);
 
-    const sideComponentBg = '#0e1116';           // Background of the side components by default
-    const selectedSideComponentBg = 'rgb(255,179,255)';     // Background color of the currently selected side component
+    const sideComponentBg = 'var(--obsidian-color)';           // Background of the side components by default
+    const selectedSideComponentBg = 'var(--obsidian-accent-color)';     // Background color of the currently selected side component
 
     /** changeSelectedStorymap(id) 
      * @abstract changes the currently selected storymap by updating the state variables selectedStorymap and selectedId
@@ -135,6 +136,7 @@ function IndustrialStoriesPage() {
                 <iframe src={ selectedStorymap } frameBorder={0} className='stories-storymap-iframe'/>
             </div>
             
+            <Footer />
         </div>
     );
 }

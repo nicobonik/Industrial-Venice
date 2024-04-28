@@ -22,9 +22,7 @@ const Sidebar = ({ selected }) => {
 
     useEffect(() => { 
         const selectedElm = document.getElementById(selected);
-        console.log('selectedElm');
-        console.log(selectedElm);
-        if(selected) document.getElementById(selected).style.color = '#EA5B41';
+        if(selected) document.getElementById(selected).style.color = '#5f639c';
     }, [selected])
 
     return (

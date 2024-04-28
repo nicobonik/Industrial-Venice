@@ -2,17 +2,18 @@
     --container-side-padding: 10%;
     --container-top-padding: 5%;
     --title-font: 'Playfair Display', Serif, monospace;
-    --title-font-size: 6vw;
+    --hp-left-offset: 3vw;
+
     --title-font-color: rgb(255, 255, 255);
     --scroll-text-color: rgb(232, 202, 162);
-    --bg-overlay: rgba(0, 0, 0, 0.324);
-    --text-align: left;
-    --scroll-top: 42vh;
-    --subtitle-bottom: -37vh;
-    --subtitle-left: 3vw;
-    --title-top: 45vh;
-    --title-left: 3vw;
-    --w: 80%;
+    --bg-overlay: rgba(0, 0, 0, 0.4);
+
+    --title-font-size: 6vw;   /* Font size for the "Industrial Giudecca" title */
+    --title-top: 35vh;        /* Offset for the title from the top */
+
+    --subtitle-top: 25vh;     /* Offset for the subtitle/quote from the bottom */
+    --scroll-top: 37vh;       /* Offset for the "This platform tells the story..." text from the top */
+
     --dividing-borders: 2px solid rgb(255, 255, 255);
     --section-header-font-color: rgb(255, 255, 255);
     --section-header-overlay: rgba(0, 0, 0, 0.612);
@@ -45,7 +46,7 @@ body {
     margin: auto;
 }
 
-.bg-overlay {
+.hp-bg-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -55,75 +56,54 @@ body {
     z-index: 500;
 }
 
-#blurb {
+#hp-title-container {
     display: flex;
     flex-direction: column;
-    font-family: var(--title-font);
-    font-size: var(--title-font-size);
     color: var(--title-font-color);
-    padding: 20vh;
     text-align: center;
-    height: 60vh;
-    z-index: 4;
+    height: 100vh;
     transition: opacity 0s ease-in-out, z-index 1s step-end;
 }
 
-.blurbElm {
-    margin: 0;
-    width: 70%;
-}
-
-#blurbTop {
+.hp-title-text, .hp-title-subtitle { 
     position: relative;
-    text-align: var(--text-align);
+    left: var(--hp-left-offset);
+    font-family: var(--title-font);
+    text-align: left;
     color: var(--title-font-color);
+    margin-top: 1vh;
+}
+
+.hp-title-text {
+    font-size: var(--title-font-size);
     top: calc(var(--title-top));
-    left: var(--title-left);
-    width: var(--w);
 }
 
-#blurbBottom {
-    position: relative;
-    text-align: var(--text-align);
-    bottom: var(--subtitle-bottom);
-    left: var(--subtitle-left);
-    width: var(--w);
+.hp-title-subtitle { 
+    top: var(--subtitle-top);
 }
 
-#blurbSubtitle {
-    font-size: 2vw;
+.hp-title-subtitle-text {
     margin: 0;
+    font-size: 2vw;
+    bottom: var(--subtitle-bottom);
 }
 
-.blurbRow {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    padding: 0;
-    padding-top: 2%;
-    padding-bottom: 2%;
+.hp-title-credits-text {
+    margin: 0;
+    margin-top: 2vh;
+    padding-left: 1vw;
+    font-size: 1vw;
 }
 
-#blurb.fade-out,
+#hp-title-container.fade-out,
 #section-header-container.fade-out {
     opacity: 0;
     z-index: -1;
     pointer-events: none;
 }
 
-#blurbCredits {
-    margin-top: 1%;
-    font-size: 1vw;
-}
-
-#scrollText {
-    color: var(--scroll-text-color);
-    font-size: 1.4vw;
-    margin: 0;
-    width: var(--w);
-}
-
-#blurbScroll {
+.hp-title-scroll {
     position: relative;
     top: var(--scroll-top);
     display: flex;
@@ -131,6 +111,13 @@ body {
     align-items: center;
     width: var(--w);
     margin: auto;
+}
+
+.hp-scroll-text {
+    color: var(--scroll-text-color);
+    font-family: var(--title-font);
+    font-size: 1.4vw;
+    margin: 0;
 }
 
 .scrollArrow {
@@ -219,19 +206,21 @@ body {
     display: inline-block;
     padding: 16px 32px;
     background-color: transparent;
-    color: #050505;
+    color: white;
     text-decoration: none;
+    border: 1px solid var(--obsidian-accent-color);
     border-radius: 0;
     font-size: 20px;
     font-family: var(--title-font);
-    text-transform: uppercase;
     letter-spacing: 2px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .factory-homepage-button:hover {
-    background-color: black;
-    color: #ffffff;
+    transition: 0.3s ease;
+    border-width: 2px;
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 @media screen and (max-width: 768px) {

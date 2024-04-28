@@ -1,12 +1,12 @@
 const translations = {
     en: {
         // Homepage translations
-        blurbElmBlurbTitle: "Industrial Giudecca",
+        homepageTitle: "Industrial Giudecca",
         blurbElmBlurbSubTitle: "\"A history without memory.\"",
         blurbElmScrollText: "This platform tells the story of industry on Giudecca.",
         deeperDive: "Let's take a deeper dive",
         intoIndustrialHistory: "into the industrial history of Giudecca ...",
-        travelToIndustrialSitesButton: "Continue to learn more about the industrial sites of the Giudecca",
+        travelToIndustrialSitesButton: "Continue to learn more about the industrial sites of Giudecca",
 
         // Timeline on homepage translations
         activeLabel: "industrial site",
@@ -15,6 +15,10 @@ const translations = {
         mapIs: "is",
         mapWere: "were",
         onGiudecca: "on Giudecca",
+        clickToLearnMore: "Click on a pin to learn more",
+        skipTimeline: "Skip Timeline",
+        resetTimeline: "Reset Timeline",
+        keepScrolling: "Scroll to advance timeline",
 
         // Search bar 
         searchForIndustrialSites: "Search for industrial sites...",
@@ -57,17 +61,12 @@ const translations = {
         opens: "opens",
         goToHome: "Go to Home",
         goToIndustrialSites: "Go to Industrial Sites",
-        goToStories: "Go to Stories Page",
-
-        // Maptimeline translations
-        clickToLearnMore: "Click on a pin to learn more",
-        skipTimeline: "Skip Timeline",
-        resetTimeline: "Reset Timeline"
+        goToStories: "Go to Stories Page"        
         
     },
     it: {
         // Homepage translations
-        blurbElmBlurbTitle: "Giudecca Industriale",
+        homepageTitle: "Giudecca Industriale",
         blurbElmBlurbSubTitle: "\"Una storia senza memoria\"",
         blurbElmScrollText: "Questa piattaforma racconta la storia dell'industria alla Giudecca.",
         deeperDive: "Facciamo un'immersione più profonda",
@@ -81,6 +80,10 @@ const translations = {
         mapIs: "c'è",
         mapWere: "c'erano",
         onGiudecca: "sulla Giudecca",
+        keepScrolling: "Scorri per avanzare nella sequenza temporale",
+        clickToLearnMore: "Fare Clic su uno Spillo per Saperne di Più",
+        skipTimeline: "Salta la Sequenza Temporale",
+        resetTimeline: "Reimpostare la Sequenza Temporale",
 
         // Search bar 
         searchForIndustrialSites: "Ricerca di siti industriali...",
@@ -123,13 +126,7 @@ const translations = {
         opens: "Apre",
         goToHome: "Vai a Casa",
         goToIndustrialSites: "Recarsi nei Siti Industriali",
-        goToStories: "Vai alla Pagina delle Storie",
-
-        // Maptimeline translations 
-        clickToLearnMore: "Fare Clic su uno Spillo per Saperne di Più",
-        skipTimeline: "Salta la Sequenza Temporale",
-        resetTimeline: "Reimpostare la Sequenza Temporale",
-
+        goToStories: "Vai alla Pagina delle Storie"        
 
     }
 };

@@ -10,6 +10,7 @@ import SearchBar from '../components/SearchBar';
 import { fetchFactoriesFL } from '../ArcGIS.js';
 import FactoriesMap from '../components/FactoriesMap/FactoriesMap.js';
 import { factoryStoryMapURLs } from '../GlobalConstants';
+import Footer from '../components/Footer.js';
 
 import LanguageSelector from '../components/LanguageSelector';
 import { LanguageContext } from '../context/LanguageContext.js';
@@ -66,11 +67,6 @@ function FactoryHomepage() {
         }
     };
 
-    const handleMarkerClick = (factoryId) => {
-        const clickedFactory = factories.find(factory => factory.Factory_ID === factoryId);
-        setFilteredFactories([clickedFactory]);
-    };
-
     const toggleShowStoriesOnly = () => {
         setShowStoriesOnly(prevState => {
             const newState = !prevState;
@@ -110,7 +106,6 @@ function FactoryHomepage() {
             {/* FactoriesMap component containing the map with markers to click on */}
             <FactoriesMap
                 factories={filteredFactories}
-                onMarkerClick={handleMarkerClick}
                 showStoriesOnly={showStoriesOnly}
                 language={language}
             />
@@ -136,6 +131,8 @@ function FactoryHomepage() {
                     ))}
                 </div>
             </div>
+
+            <Footer />
         </div>
     );
 }
