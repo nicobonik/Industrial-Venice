@@ -96,7 +96,7 @@ function IndustrialStoriesPage() {
     }, [language]); 
     
     useEffect(() => { 
-        const scrollAmount = 440;
+        const scrollAmount = 450;
         const rightScrollArrow = document.getElementById('stories-scroll-right-arrow');
         const leftScrollArrow = document.getElementById('stories-scroll-left-arrow');
         const container = document.querySelector('.stories-top-container');
