@@ -2,6 +2,11 @@
 
 /** { Component } TimelineLine
  * @abstract Component rendered on the FactoryTimeline that connects each timeperiod circle with a line and an arrow
+ * 
+ * @param { String } length - length of the line formatted as a CSS string (e.g. "10px", "5vw", etc)
+ * 
+ * @exports 
+ *    @function TimelineLine 
  */
 import '../../css/components/TimelineLine.css';
 import TimelineTriangle from './TimelineTriangle';

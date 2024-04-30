@@ -12,6 +12,11 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
+// Language context
+import { LanguageContext } from '../context/LanguageContext.js';
+import LanguageSelector from '../components/LanguageSelector.js';
+
+// Components/functions
 import Sidebar from '../components/Sidebar.js';
 import { featureLayerServiceURLs } from '../GlobalConstants.js';
 import { fetchFactoriesFL, fetchFL } from '../ArcGIS.js';
@@ -20,9 +25,6 @@ import Gallery from '../components/Photo/Gallery.js';
 import { factoryStoryMapURLs } from '../GlobalConstants.js';
 import FactoryTimeline from '../components/FactoryTimeline.js';
 import Footer from '../components/Footer.js';
-
-import { LanguageContext } from '../context/LanguageContext.js';
-import LanguageSelector from '../components/LanguageSelector.js';
 
 import '../css/components/Gallery.css';
 import '../css/components/Photo.css';
@@ -38,9 +40,10 @@ function BasicFactoryTemplate() {
     const [factoryTimelineParams, setTimelineParams] = useState({});
     let removeTimeline = false;
 
-    const { t, language } = useContext(LanguageContext);                   // For translation
+    const { t, language } = useContext(LanguageContext);
     let languageSelected = sessionStorage.getItem('hasSelectedLanguage');
 
+    // Colors for the different types of circles
     const circleColors = { 
         'products': [255, 199, 238],
         'employment': [255, 251, 199],
@@ -80,22 +83,25 @@ function BasicFactoryTemplate() {
                 });
             });
 
-            
             // Push the opening and closing dates for this factory onto the timeperiods (if they exist)
             if(factory.Opening_Year) { 
                 let returnDict = {};
 
                 if(language == 'en') { 
+                    // English translation
                     returnDict = { 
                         'Title': `${factory.English_Name} opens.`,
                         'Color': circleColors['info']
                     }
                 } else { 
+                    // Italian translation
                     returnDict = { 
                         'Title': `${t('opens')} ${factory.Italian_Name}.`,
                         'Color': circleColors['info']
                     }
                 }
+
+                // Set the timeperiods if they exists
                 if(timeperiods.hasOwnProperty(parseInt(factory.Opening_Year))) { 
                     timeperiods[parseInt(factory.Opening_Year)].push(returnDict);
                 } else { 
@@ -125,14 +131,11 @@ function BasicFactoryTemplate() {
                 }
             }
 
-            
-
-
             /** Get the product information for this factory & construct timeperiods
              * @constant { dict } productsTimeperiods - the changes in products produced for this factory in the format 
              *                                          { 'Title': "[Factory name] starts producing X.", 'Year': [Year started producing]}
              */
-            const productsTimeperiods = await fetchFL(
+            await fetchFL(
                 featureLayerServiceURLs['Product_Over_Time'],
                 `Factory_ID = ${Factory_ID}`
             )
@@ -159,7 +162,7 @@ function BasicFactoryTemplate() {
              * @constant { dict } employmentTimeperiods - the changes in employment rates for this factory in the format 
              *                                          { 'Title': "[Factory name] has X employees.", 'Year': [Year]}
              */
-            const employmentTimeperiods = await fetchFL(
+            await fetchFL(
                 featureLayerServiceURLs['Employment_Over_Time'],
                 `Factory_ID = ${Factory_ID}`
             )
@@ -181,8 +184,6 @@ function BasicFactoryTemplate() {
                     }
                 }); 
             })
-
-            console.log(timeperiods);
 
             // Set the timeline params 
             setTimelineParams({ 
@@ -218,7 +219,7 @@ function BasicFactoryTemplate() {
     */
     useEffect(() => {
         const timelineContainer = document.getElementById('factory-timeline-container');    // Element for the grid 
-        const storyboardContainer = document.getElementById('storyboard');          // Element for the storyboard
+        const storyboardContainer = document.getElementById('storyboard');                  // Element for the storyboard
 
         // Conditional: if removeGrid and gridContainer exists, remove the grid and do nothing else 
         if (timelineContainer && removeTimeline) { 

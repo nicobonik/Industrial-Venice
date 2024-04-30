@@ -3,17 +3,24 @@
 /** IndustrialStoriesPage
  * @abstract Renders the page containing outlinks to all the historical storymaps at the relative path "/industrial-stories". Takes no parameters.
  * This page serves as a jump-off point for the other historical stories. The content is minimal and intentionally simplistic. 
+ * 
+ * @exports 
+ *      @function IndustrialStoriesPage
  */
 import React, { useState, useEffect, useContext } from 'react';
 
-import Sidebar from '../components/Sidebar.js';
-import { factoryStoryMapURLs, featureLayerServiceURLs } from '../GlobalConstants.js';
+// Language context
 import LanguageSelector from '../components/LanguageSelector.js';
 import { LanguageContext } from '../context/LanguageContext.js';
+
+// Components/functions
+import Sidebar from '../components/Sidebar.js';
+import { factoryStoryMapURLs, featureLayerServiceURLs } from '../GlobalConstants.js';
 import Title from '../components/Title.js';
 import { fetchFL } from '../ArcGIS.js';
 import Footer from '../components/Footer.js';
 
+// Stylesheets
 import '../css/IndustrialStories.css';
 
 function IndustrialStoriesPage() {
@@ -95,6 +102,7 @@ function IndustrialStoriesPage() {
         return () => { isMounted = false; };
     }, [language]); 
     
+    // useEffect => add event listeners to the scroll arrows on load
     useEffect(() => { 
         const scrollAmount = 450;
         const rightScrollArrow = document.getElementById('stories-scroll-right-arrow');
@@ -120,7 +128,6 @@ function IndustrialStoriesPage() {
         });
     }, [])
     
-
     return (
         <div className="industrial-stories-page">
             {/* Language selector if a language has not yet been chosen this session */}

@@ -1,19 +1,5 @@
 // src/pages/Homepage.js
 
-import React, { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
-
-import '../css/Homepage.css';
-import '../css/components/MapTimeline.css';
-
-import { fetchFactoriesFL, fetchFL } from '../ArcGIS.js';
-import { featureLayerServiceURLs, factoryStoryMapURLs } from '../GlobalConstants.js';
-import Sidebar from '../components/Sidebar.js';
-import MapTimeline from '../components/TimelineMap/MapTimeline.js';
-import LanguageSelector from '../components/LanguageSelector';
-import { LanguageContext } from '../context/LanguageContext.js';
-import Footer from '../components/Footer.js';
-
 /**
  * Homepage component
  * @abstract Renders the homepage at the relative route "/". Takes no parameters. Contains:
@@ -21,7 +7,28 @@ import Footer from '../components/Footer.js';
  * - A MapTimeline component that scrolls with the user's scroll. MapTimeline component is defined in src/components/MapTimeline/
  * - Header to break up the space between the MapTimeline and the historical storymap
  * - A storymap of the history of Giudecca. The URL for this storymap is defined in src/GlobalConstants.js => factoryStoryMapURLs[g]
+ * 
+ * @exports 
+ *      @function Homepage
  */
+import React, { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
+
+// Language context
+import LanguageSelector from '../components/LanguageSelector';
+import { LanguageContext } from '../context/LanguageContext.js';
+
+// Components/functions
+import { fetchFactoriesFL, fetchFL } from '../ArcGIS.js';
+import { featureLayerServiceURLs, factoryStoryMapURLs } from '../GlobalConstants.js';
+import Sidebar from '../components/Sidebar.js';
+import MapTimeline from '../components/TimelineMap/MapTimeline.js';
+import Footer from '../components/Footer.js';
+
+// Stylesheets
+import '../css/Homepage.css';
+import '../css/components/MapTimeline.css';
+
 function Homepage() {
     const [titleContainerOpacity, setTitleContainerOpacity] = useState(1); // State for title fade in/out
     const [showScrollArrow] = useState(false); // State for "Scroll to learn more" title animation
@@ -88,7 +95,7 @@ function Homepage() {
         .catch(error => {
             console.error('Error fetching timeperiods:', error);
         });
-    }, [language]); // Empty dependency array
+    }, [language]);
 
     // useEffect to handle blurb/title fade in and out logic
     useEffect(() => {

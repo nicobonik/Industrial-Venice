@@ -8,6 +8,9 @@
  * @param { Array[Object] } timeperiods - Array of timeperiods as Dictionaries (Objects)
  * @param { Object } minMaxYear - Object (Dictionary) in the format [ key : val ] => [ min: [int], max: [int] ]
  *                                for the min and max year on the timeline
+ * 
+ * @exports 
+ *      @const { Component } MapTimeline
  */
 import React, {useState, useEffect, useRef, useContext} from 'react';
 

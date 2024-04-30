@@ -1,15 +1,20 @@
 // src/components/Title.js
 
 /**  { Component } Title
- *
  * @abstract Title is a component to standardize the titles as they display on each page. 
+ * 
  * @param {str} title - the title to display (verbatim)
  * 
+ * @exports 
+ *      @const { Component } Title
  */
 import React, { useEffect, useState, useContext } from 'react';
-import '../css/components/Title.css';
 
+// Language context
 import { LanguageContext } from '../context/LanguageContext.js';
+
+// Stylesheets 
+import '../css/components/Title.css';
 
 const Title = (title) => {
     const [titleOpacity, setTitleOpacity] = useState(1);

@@ -6,11 +6,17 @@
  * and the Photo Gallery.
  * 
  * @param { function } onSearch - Callback function for when a search is submitted 
+ * 
+ * @exports 
+ *      @const { Component } SearchBar 
  */
-
 import React, { useState, useContext } from 'react';
-import '../css/components/Searchbar.css'; 
+
+// Language context
 import { LanguageContext } from '../context/LanguageContext.js';
+
+// Stylesheets
+import '../css/components/Searchbar.css'; 
 
 const SearchBar = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = useState('');

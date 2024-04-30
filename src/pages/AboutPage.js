@@ -9,15 +9,18 @@
  * This page does not contain any dynamic data that needs to be updated. 
  */
 import React, { useContext } from 'react';
+
+// Language context
+import { LanguageContext } from '../context/LanguageContext.js';
+import LanguageSelector from '../components/LanguageSelector.js';
+
+// Components
 import Sidebar from '../components/Sidebar.js';
 import Footer from '../components/Footer.js';
-
-import LanguageSelector from '../components/LanguageSelector.js';
-import { LanguageContext } from '../context/LanguageContext.js';
-
 import Title from '../components/Title.js';
-import '../css/AboutPage.css';
 
+// Stylesheets
+import '../css/AboutPage.css';
 
 function AboutPage() {
     const {t, language} = useContext(LanguageContext);

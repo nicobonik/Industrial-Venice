@@ -12,9 +12,9 @@ import '../css/InteractiveMap.css'; // Import the CSS file
  * app service is defined in src/GlobalConstants.js => mapInstantAppURL
  */
 function InteractiveMap() {
-    const [showSidebar, setShowSidebar] = useState(false);
     const [loading, setLoading] = useState(true);
 
+    // Event handler for showing the loading icon
     const handleMapLoad = () => {
         setLoading(false);
     };

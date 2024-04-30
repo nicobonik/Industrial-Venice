@@ -5,23 +5,27 @@
  * defined in src/components/DataExplorer/DataExplorer.js to dynamically render content and handle queries. The DataExplorerPage is merely a
  * container for the DataExplorer component, the title component, and sidebar component. See src/components/DataExplorer/DataExplorer.js for
  * more details on the Data Explorer.
+ * 
+ * @exports 
+ *      @function DataExplorerPage
  */
 import React, { useState, useContext, useEffect } from 'react';
 
+// Components/functions
 import Sidebar from '../components/Sidebar.js';
 import DataExplorer from '../components/DataExplorer/DataExplorer.js';
 import Title from '../components/Title.js';
-import Footer from '../components/Footer.js';
 import LanguageSelector from '../components/LanguageSelector';
 import { LanguageContext } from '../context/LanguageContext.js';
 
+// Stylesheets
 import '../css/DataExplorer.css';
-
 
 function DataExplorerPage() {
     const { t } = useContext(LanguageContext);
     const [isMobile, setIsMobile] = useState(false);
 
+    // useEffect() => handling the resize for mobile devices
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 768);

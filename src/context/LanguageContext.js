@@ -1,14 +1,24 @@
 // src/context/LanguageContext.js
 
-import React, { createContext, useState, useEffect } from 'react';
+/** { Component } LanguageContext 
+ * @abstract LanguageContext is a wrapper class that contains the logic for switching languages and carrying the state across pages
+ * 
+ * @exports 
+ *      @const { Component } LanguageProvider
+ */
+import React, { createContext, useState } from 'react';
 import translations from '../translations';
-import ReactDOM from 'react-dom';
 
+// Create a language context to use across pages
 export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
     const [language, setLanguage] = useState('en');
 
+    /** changeLanguage(newLanguage)
+     * @abstract takes in a new language and changes the state across the application.
+     * @param { String[2] } newLanguage 
+     */
     function changeLanguage(newLanguage) {
         sessionStorage.setItem('hasSelectedLanguage', 'true');
         setLanguage(newLanguage);

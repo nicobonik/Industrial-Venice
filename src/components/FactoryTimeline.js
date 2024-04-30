@@ -6,6 +6,9 @@
  * 
  * @param { Factory } factory - A factory object for this page 
  * @param { Object } timeperiods - An Object (dictionary) in the format [ key : val ] => [ year : timeperiod_as_dict ] 
+ * 
+ * @exports 
+ *      @const { Component } FactoryTimeline
  */
 import React, { useState, useEffect } from 'react';
 import TimelineCircle from './Shapes/TimelineCircle';

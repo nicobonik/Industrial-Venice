@@ -1,9 +1,21 @@
 // src/pages/FactoryHomepage.js
 
+/** { Component } FactoryHomepage
+ * @abstract FactoryHomepage is rendered at the '/industrial-sites' endpoint. It contains a map and the tiles for each factory that
+ * link to the separate pages for each factory.
+ * 
+ * @exports 
+ *      @function FactoryHomepage
+ */
 import { React, useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Fuse from 'fuse.js';
 
+// Language context
+import LanguageSelector from '../components/LanguageSelector';
+import { LanguageContext } from '../context/LanguageContext.js';
+
+// Components/functions
 import Title from '../components/Title.js';
 import Sidebar from '../components/Sidebar';
 import SearchBar from '../components/SearchBar';
@@ -12,9 +24,8 @@ import FactoriesMap from '../components/FactoriesMap/FactoriesMap.js';
 import { factoryStoryMapURLs } from '../GlobalConstants';
 import Footer from '../components/Footer.js';
 
-import LanguageSelector from '../components/LanguageSelector';
-import { LanguageContext } from '../context/LanguageContext.js';
 
+// Stylesheets
 import '../css/FactoryHomepage.css';
 
 function FactoryHomepage() {
@@ -24,6 +35,7 @@ function FactoryHomepage() {
     const [showStoriesOnly, setShowStoriesOnly] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
+    // useEffect() => handle resize for mobile devices
     useEffect(() => {
         window.scrollTo({ top: 0 });
         fetchFactoriesFL()
@@ -47,6 +59,7 @@ function FactoryHomepage() {
         };
     }, []);
 
+    // Event handler for when a search term is entered
     const handleSearch = (searchTerm) => {
         if (searchTerm.trim() === '') {
             console.log('no search term');
@@ -67,6 +80,7 @@ function FactoryHomepage() {
         }
     };
 
+    // Event handler for toggling the showStoriesOnly button
     const toggleShowStoriesOnly = () => {
         setShowStoriesOnly(prevState => {
             const newState = !prevState;

@@ -57,7 +57,6 @@ export const factoryStoryMapURLs = {
     }
 }
 
-
 // URL endpoints for the feature layers that host the data needed for the Data Explorer and the Search Bar
 export const featureLayerServiceURLs = { 
     'Owner_Over_Time': 'https://services7.arcgis.com/BEVijU9IvwRENrmx/arcgis/rest/services/Owner_Over_Time/FeatureServer/0',
